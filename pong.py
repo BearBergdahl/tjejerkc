@@ -77,13 +77,7 @@ def bar_a_down():
     if bar_A.ycor() > -230:
         bar_A.sety(bar_A.ycor() - PADDLE_SPEED)
 
-def bar_b_up():
-    if bar_B.ycor() < 230:
-        bar_B.sety(bar_B.ycor() + PADDLE_SPEED)
 
-def bar_b_down():
-    if bar_B.ycor() > -230:
-        bar_B.sety(bar_B.ycor() - PADDLE_SPEED)
 
 # Function to toggle pause
 def toggle_pause():
@@ -94,10 +88,9 @@ def toggle_pause():
 wind.listen()
 wind.onkeypress(bar_a_up, "a")
 wind.onkeypress(bar_a_down, "z")
-wind.onkeypress(bar_b_up, "Up")
-wind.onkeypress(bar_b_down, "Down")
+
 wind.onkeypress(toggle_pause, "space")
-wind.onkeypress(wind.bye, "Escape")  # Exit the game
+wind.onkeypress(wind.bye, "Escape")  
 
 # Function to run the game loop
 def game_loop():
