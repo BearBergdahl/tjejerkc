@@ -147,6 +147,15 @@ def game_loop():
     # Add instructions for the user
     game_over_board.goto(0, -100)
     game_over_board.write("Press 'Escape' to exit", align="center", font=("Courier", 16, "normal"))
+    # Declare the winner
+    winner = "Player A" if score_a == WINNING_SCORE else "Player B"
+    game_over_board.goto(0, -80)
+    game_over_board.write(f"{winner} wins!", align="center", font=("Courier", 24, "bold"))
+
+    # Pause the game after "Game over"
+    wind.listen()
+    wind.onkeypress(wind.bye, "Escape")  # Exit the game
+    turtle.done()  # Keeps the window open until the user presses Escape
 
 # Start the game loop
 game_loop()
